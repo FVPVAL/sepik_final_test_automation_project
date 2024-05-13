@@ -19,3 +19,10 @@ class ProductPage(BasePage):
                 self.browser.find_element(*ProductPageLocator.TOTAL_IN_THE_CART).text), \
             "The cost of the basket and everything in the basket are not equal"
 
+    def should_not_by_success_present(self):
+        assert self.is_not_element_present(*ProductPageLocator.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocator.SUCCESS_MESSAGE), \
+        "The notification does not disappear"

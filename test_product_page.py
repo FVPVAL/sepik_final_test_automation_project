@@ -9,7 +9,7 @@ def test_guest_can_add_product_to_basket(browser, offer):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{offer}"
     page = ProductPage(browser, link)
     page.open()
-    page.add_to_cart()
+    page.add_to_basket()
     page.should_be_match_title()
     page.should_be_the_same_price()
 
@@ -19,7 +19,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     page = ProductPage(browser, link)
     page.open()
-    page.add_to_cart()
+    page.add_to_basket()
     page.should_not_by_success_present()
 
 
@@ -35,7 +35,7 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     page = ProductPage(browser, link)
     page.open()
-    page.add_to_cart()
+    page.add_to_basket()
     page.should_disappeared()
 
 

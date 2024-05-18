@@ -2,6 +2,7 @@ from .pages.login_page import LoginPage
 
 
 def test_guest_should_see_login_url(browser):
+    """Гость должен видеть 'login' в url"""
     link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     page = LoginPage(browser, link)
     page.open()
@@ -9,6 +10,7 @@ def test_guest_should_see_login_url(browser):
 
 
 def test_guest_should_see_login_form(browser):
+    """Гость должен видеть форму авторизации"""
     link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     page = LoginPage(browser, link)
     page.open()
@@ -16,6 +18,7 @@ def test_guest_should_see_login_form(browser):
 
 
 def test_guest_should_see_register_form(browser):
+    """Гость должен видеть форму регистрации"""
     link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     page = LoginPage(browser, link)
     page.open()

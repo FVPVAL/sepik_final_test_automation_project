@@ -17,13 +17,16 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage:
+    """Авторизация с главной страницы"""
     def test_guest_should_see_login_link_on_main_page(self, browser):
+        """Гость может видеть ссылку для входа на главной странице"""
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
         page.should_be_login_link()
 
     def test_guest_can_go_to_login_page_from_main_page(self, browser):
+        """Гость может перейти на страницу авторизации с главной страницы"""
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
